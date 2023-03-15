@@ -39,9 +39,9 @@
 </head>  
 <body>    
     <script>
-    const AS_URL_BASE="https://script.google.com/macros/s/AKfycbxSudnWp4QHyRJ_QJGxQHf3IaOU0DR8321DqNx_O5r0lrwO1Ho8HAxajFuT1lxu1UBN/exec";
-    var url=document.location.href;
-    var k=url.substr(url.lastIndexOf("k=")+2);
+    const AS_URL_BASE = "https://script.google.com/macros/s/AKfycbxSudnWp4QHyRJ_QJGxQHf3IaOU0DR8321DqNx_O5r0lrwO1Ho8HAxajFuT1lxu1UBN/exec";
+    var url = document.location.href;
+    var k = url.substr(url.lastIndexOf("k=")+2);
     if (k){
       fetch(AS_URL_BASE+'?k='+k)
       .then(r =>  r.text())
@@ -51,8 +51,9 @@
       if(r){
       document.locatio.replace(r);
       }
+           .catch(err => console.log (err))
       })
-      .catch(err => console.log (err))
+     
     }
     </script>
     
