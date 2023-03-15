@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">  
+<head>    
+    <title>COBA</title>    
+    <meta charset="UTF-8">
+    <style>
+      body {
+      backgound-color: lighblue;
+      text-align: center;
+      }
+      
+      .lds-dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+      
+    </style>
+</head>  
+<body>    
+    <script>
+    const AS_URL_BASE="";
+    var url=document.location.href;
+    var k=url.substr(url.lastIndexOf("k=")+2);
+    if (k){
+      fetch(AS_URL_BASE+'?k='+k)
+      .then(r =>  r.text())
+      .then((r) => {
+      console.log(r);
+      //document.whrite(r);
+      if(r){
+      document.locatio.replace(r);
+      }
+      })
+      .catch(err => console.log (err))
+    }
+    </script>
+    
+    <div class="lds-dual-ring"></div>
+</body>  
+</html>
